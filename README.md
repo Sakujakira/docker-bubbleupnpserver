@@ -1,6 +1,11 @@
-# docker-bubbleupnpserver
 
+# docker-bubbleupnpserver
 # Introduction
+
+This is a docker container based on [bubbleupnp-server](https://www.bubblesoftapps.com/bubbleupnpserver2/).
+
+I`ve added configuration persistence on top of [Trauma/docker-bubbleupnpserver](https://github.com/Trauma/docker-bubbleupnpserver) existing build. 
+Additional i've changed the base OS from Ubuntu to Debian. 
 
 BubbleUPnP Server provides new services, many of them running on top of your existing UPnP/DLNA devices:
 
@@ -14,23 +19,6 @@ BubbleUPnP Server provides new services, many of them running on top of your exi
 
 **BUBBLEUPNP SERVER IS NOT AN UPNP AV MEDIA SERVER**
 
-# Installation
-
-Pull the image from the docker registry e.g.
-
-```docker pull tromatik/docker-bubbleupnpserver```
-
-or build it:  
-
-```git clone https://github.com/Trauma/docker-bubbleupnpserver.git```
-
-```cd docker-bubbleupnpserver```
-
-```docker build --tag="$USER/bubbleupnpserver" .```
-
-run your build:
-```docker run -d --name=<your_container_name> --net=host $USER/docker-bubbleupnpserver:latest```
-
 # Using Docker-compose
 
 ```  
@@ -41,37 +29,49 @@ run your build:
     volumes:
       - ${USERDIR}/docker/bubbleupnp/config:/config
     ports:
-      - "58050:58050"
-      - "58051:58051"
-      - "1900:1900"
+      - "XXXXX:58050"
+      - "XXXXX:58051"
+      - "XXXXX:1900"
     restart: always
 ```
 
-# Quick Start
+# manuell installation
 
+Pull the image from the docker registry e.g.
+
+```docker pull sakujakira/bubbleupnpserver```
+
+or build it:  
+
+```
+git clone https://github.com/sakujakira/docker-bubbleupnpserver.git
+cd docker-bubbleupnpserver
+docker build --tag="$USER/bubbleupnpserver".
+```
+run your build:
+```docker run -d --name=<your_container_name> --net=host $USER/bubbleupnpserver:latest```
+## Quick Start
 Run the downloaded image (as a daemon):
+```docker run -d --name=<your_container_name> --net=host sakujakira/bubbleupnpserver:latest```
 
-```docker run -d --name=<your_container_name> --net=host tromatik/docker-bubbleupnpserver:latest```
-
-# Test it
-
+## Test it
 http://<host.ip>:58050 or https://<host.ip>:58051
 
-# Configuration
-
+## Configuration
 Configuration is available through bubbleupnpserer's web interface.
 
-# Shell Access
-
-
+## Shell Access
 For debugging and maintenance purposes you may want access the containers shell. Either add after the run command or tun e.g.
-
-```docker exec -it "$USER/docker-bubbleupnpserver" bash  ```
+```docker exec -it "$USER/bubbleupnpserver" bash  ```
 
 or
+
 ```docker ps```
 ```docker exec -it <container-id> bash   ```
 
-# Autostart the container
+## Autostart the container
+add the parameter ```--restart=always``` to your docker run command.
 
-add the parameter --restart=always to your docker run command.
+# Known issues
+1. healthcheck does not work
+2. Plex Icon can`t be retrieved
