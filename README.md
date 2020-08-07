@@ -31,6 +31,22 @@ or build it:
 run your build:
 ```docker run -d --name=<your_container_name> --net=host $USER/docker-bubbleupnpserver:latest```
 
+# Using Docker-compose
+
+```  
+  bubbleupnp:
+    image: "sakujakira/bubbleupnp:latest"
+    hostname: bubbleupnp
+    container_name: "bubbleupnp"
+    volumes:
+      - ${USERDIR}/docker/bubbleupnp/config:/config
+    ports:
+      - "58050:58050"
+      - "58051:58051"
+      - "1900:1900"
+    restart: always
+```
+
 # Quick Start
 
 Run the downloaded image (as a daemon):
