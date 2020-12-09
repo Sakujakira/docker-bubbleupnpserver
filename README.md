@@ -73,5 +73,5 @@ or
 add the parameter ```--restart=always``` to your docker run command.
 
 # Known issues
-1. healthcheck does not work
+~~1. healthcheck does not work~~
 2. Plex Icon can`t be retrieved
