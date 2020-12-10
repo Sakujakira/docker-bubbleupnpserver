@@ -1,7 +1,10 @@
 
-# docker-bubbleupnpserver
-# Introduction
+#Bubble-UPnP Server
+![Logo from BubbleUPnP](bubbleupnp_web_logo.png)
 
+## Introduction
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/sakujakira/bubbleupnpserver?style=for-the-badge&logo=docker)](https://hub.docker.com/r/sakujakira/bubbleupnpserver) 
+[![Docker Pull Count](https://img.shields.io/docker/pulls/sakujakira/bubbleupnpserver?style=for-the-badge&logo=docker)](https://hub.docker.com/r/sakujakira/bubbleupnpserver)
 This is a docker container based on [bubbleupnp-server](https://www.bubblesoftapps.com/bubbleupnpserver2/).
 
 I`ve added configuration persistence on top of [Trauma/docker-bubbleupnpserver](https://github.com/Trauma/docker-bubbleupnpserver) existing build. 
@@ -19,7 +22,7 @@ BubbleUPnP Server provides new services, many of them running on top of your exi
 
 **BUBBLEUPNP SERVER IS NOT AN UPNP AV MEDIA SERVER**
 
-# Using Docker-compose
+## Using Docker-compose
 
 ```  
   bubbleupnp:
@@ -35,7 +38,7 @@ BubbleUPnP Server provides new services, many of them running on top of your exi
     restart: always
 ```
 
-# manuell installation
+## manuell installation
 
 Pull the image from the docker registry e.g.
 
@@ -72,6 +75,6 @@ or
 ## Autostart the container
 add the parameter ```--restart=always``` to your docker run command.
 
-# Known issues
-~~1. healthcheck does not work~~
+## Known issues
+~~1. healthcheck does not work~~ 
 2. Plex Icon can`t be retrieved
