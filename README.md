@@ -1,10 +1,12 @@
 
-#Bubble-UPnP Server
+# Bubble-UPnP Server
 ![Logo from BubbleUPnP](bubbleupnp_web_logo.png)
 
 ## Introduction
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/sakujakira/bubbleupnpserver?style=for-the-badge&logo=docker)](https://hub.docker.com/r/sakujakira/bubbleupnpserver) 
 [![Docker Pull Count](https://img.shields.io/docker/pulls/sakujakira/bubbleupnpserver?style=for-the-badge&logo=docker)](https://hub.docker.com/r/sakujakira/bubbleupnpserver)
+[![Docker Image Size](https://img.shields.io/docker/image-size/sakujakira/bubbleupnpserver/latest?style=for-the-badge&logo=docker)](https://hub.docker.com/r/sakujakira/bubbleupnpserver)
+
 This is a docker container based on [bubbleupnp-server](https://www.bubblesoftapps.com/bubbleupnpserver2/).
 
 I`ve added configuration persistence on top of [Trauma/docker-bubbleupnpserver](https://github.com/Trauma/docker-bubbleupnpserver) existing build. 
