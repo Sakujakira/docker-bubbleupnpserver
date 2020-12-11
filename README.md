@@ -9,7 +9,7 @@
 
 This is a docker container based on [bubbleupnp-server](https://www.bubblesoftapps.com/bubbleupnpserver2/).
 
-I`ve added configuration persistence on top of [Trauma/docker-bubbleupnpserver](https://github.com/Trauma/docker-bubbleupnpserver) existing build. 
+I've added configuration persistence on top of [Trauma/docker-bubbleupnpserver](https://github.com/Trauma/docker-bubbleupnpserver) existing build. 
 Additional i've changed the base OS from Ubuntu to Debian. 
 
 BubbleUPnP Server provides new services, many of them running on top of your existing UPnP/DLNA devices:
@@ -24,7 +24,8 @@ BubbleUPnP Server provides new services, many of them running on top of your exi
 
 **BUBBLEUPNP SERVER IS NOT AN UPNP AV MEDIA SERVER**
 
-## Using Docker-compose
+## Installation
+### Using Docker-compose
 
 ```  
   bubbleupnp:
@@ -39,9 +40,13 @@ BubbleUPnP Server provides new services, many of them running on top of your exi
       - "XXXXX:1900"
     restart: always
 ```
+Now you can run it with `docker-compose -d bubbleupnp`
 
-## manuell installation
+### Docker CLI
+Run the downloaded image (as a daemon):
+```docker run -d --name=<your_container_name> --net=host sakujakira/bubbleupnpserver:latest```
 
+### manuell installation
 Pull the image from the docker registry e.g.
 
 ```docker pull sakujakira/bubbleupnpserver```
@@ -53,11 +58,8 @@ git clone https://github.com/sakujakira/docker-bubbleupnpserver.git
 cd docker-bubbleupnpserver
 docker build --tag="$USER/bubbleupnpserver".
 ```
-run your build:
+Run your build as a daemon:
 ```docker run -d --name=<your_container_name> --net=host $USER/bubbleupnpserver:latest```
-## Quick Start
-Run the downloaded image (as a daemon):
-```docker run -d --name=<your_container_name> --net=host sakujakira/bubbleupnpserver:latest```
 
 ## Test it
 http://<host.ip>:58050 or https://<host.ip>:58051
@@ -75,8 +77,8 @@ or
 ```docker exec -it <container-id> bash   ```
 
 ## Autostart the container
-add the parameter ```--restart=always``` to your docker run command.
+add the parameter `--restart=always` to your docker run command.
 
 ## Known issues
-~~1. healthcheck does not work~~ 
-2. Plex Icon can`t be retrieved
+~~1. healthcheck does not work~~ </br>
+2. Plex Icon can't be retrieved
